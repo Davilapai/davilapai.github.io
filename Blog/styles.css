@@ -1,0 +1,370 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #fafafa;
+}
+
+/* Tipografía */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #34495e;
+}
+
+/* Sección hero */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(44, 62, 80, 0.8) 0%,
+        rgba(52, 73, 94, 0.6) 50%,
+        rgba(231, 76, 60, 0.4) 100%
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+    line-height: 1.2;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.95;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+/* Contenedor principal del blog */
+.blog-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    margin-top: -50px;
+    position: relative;
+    z-index: 4;
+    border-radius: 10px;
+}
+
+/* Meta información del post */
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #ecf0f1;
+    font-size: 0.95rem;
+    color: #7f8c8d;
+}
+
+.post-date {
+    font-weight: 600;
+    color: #e74c3c;
+}
+
+.post-author {
+    font-style: italic;
+}
+
+/* Contenido del post */
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.lead-paragraph {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #2c3e50;
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 5px solid #e74c3c;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.post-content p {
+    margin-bottom: 1.8rem;
+    text-align: justify;
+    color: #444;
+}
+
+/* Secciones con imágenes */
+.section-with-image {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.content-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .content-image {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 2rem 1.5rem 1rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Sección de referencias */
+.references-section {
+    margin-top: 4rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    border: 1px solid #dee2e6;
+}
+
+.references-section h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.references-list {
+    list-style: none;
+    padding: 0;
+}
+
+.references-list li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.references-list li:hover {
+    transform: translateX(5px);
+}
+
+/* Footer */
+.blog-footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .blog-container {
+        margin: 0;
+        padding: 2rem 1rem;
+        border-radius: 0;
+        margin-top: -30px;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .lead-paragraph {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .post-content {
+        font-size: 1rem;
+    }
+    
+    .image-caption {
+        padding: 1.5rem 1rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .references-section {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .blog-container {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .lead-paragraph {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .post-content p {
+        text-align: left;
+    }
+}
+
+/* Animaciones suaves */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-content > * {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efectos de scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mejoras de accesibilidad */
+.content-image {
+    alt: "Imagen descriptiva";
+}
+
+/* Estilos para texto seleccionado */
+::selection {
+    background: #e74c3c;
+    color: white;
+}
+
+::-moz-selection {
+    background: #e74c3c;
+    color: white;
+}
